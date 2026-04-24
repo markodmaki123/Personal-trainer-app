@@ -5,6 +5,7 @@ import com.personal.trainer.demo.contract.TrainerDTO;
 import com.personal.trainer.demo.infrastructure.repository.ClientRepository;
 import com.personal.trainer.demo.infrastructure.repository.TrainerRepository;
 import com.personal.trainer.demo.model.Client;
+import com.personal.trainer.demo.model.Exercise;
 import com.personal.trainer.demo.model.Trainer;
 import com.personal.trainer.demo.service.AuthService;
 import jakarta.transaction.Transactional;
@@ -14,10 +15,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.*;
 
 @Service
 @Transactional
@@ -50,7 +48,9 @@ public class AuthServiceImplementation implements AuthService {
         register.setBiography(trainer.getBiography());
         register.setBirthDate(trainer.getBirthDate());
         register.setSurname(trainer.getSurname());
-        register.setExercises(trainer.getExercises());
+
+        Set<Exercise> exercises = new HashSet<>();
+        register.setExercises(exercises);
 
         return trainerRepository.save(register);
     }
@@ -121,7 +121,6 @@ public class AuthServiceImplementation implements AuthService {
         dto.setBirthDate(trainer.getBirthDate());
         dto.setBiography(trainer.getBiography());
         dto.setSpecializedFor(trainer.getSpecializedFor());
-        dto.setExercises(trainer.getExercises());
         return dto;
     }
 

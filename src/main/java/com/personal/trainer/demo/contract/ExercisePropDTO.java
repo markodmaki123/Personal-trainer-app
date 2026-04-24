@@ -5,22 +5,15 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class TrainerDTO {
+public class ExercisePropDTO {
 
     Long id;
-    String email;
-    String password;
     String name;
-    String surname;
-    LocalDate birthDate;
-    String biography;
-    String specializedFor;
-    String gender;
+    String description;
     //Set<Exercise> exercises = new HashSet<>();
 }

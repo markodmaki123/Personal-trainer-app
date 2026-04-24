@@ -31,4 +31,12 @@ public class ExerciseMachine {
     @ManyToMany(mappedBy = "exercise_machine")
     Set<Exercise> exercises = new HashSet<>();
 
+    public void addExercise(Exercise eq) {
+        exercises.add(eq);
+    }
+
+    public void removeExercise(Exercise eq) {
+        exercises.remove(eq);
+    }
+
 }
