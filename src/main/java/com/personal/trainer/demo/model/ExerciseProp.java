@@ -28,7 +28,7 @@ public class ExerciseProp {
     @Column(name = "description", nullable = false)
     String description;
 
-    @ManyToMany(mappedBy = "exercise_prop")
+    @ManyToMany(mappedBy = "props")
     Set<Exercise> exercises = new HashSet<>();
 
     public void addExercise(Exercise eq) {

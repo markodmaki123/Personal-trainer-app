@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "a311d254-230a-451c-bcd4-e2d834f443d0",
+		"name": "SSS Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20764527"
+	},
+	"item": [
+		{
+			"name": "Register client ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vuk\",\r\n    \"email\": \"123@mai.com\",\r\n    \"password\": \"123\",\r\n    \"surname\": \"Vucevic\",\r\n    \"gender\": \"Muski\",\r\n    \"height\": 180,\r\n    \"weight\": 90,\r\n    \"width\": 45,\r\n    \"medicalHistory\": \"Alergican na nerad\",\r\n    \"birthDate\": \"1990-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register trainer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Trener\",\r\n    \"email\": \"trener@mail.com\",\r\n    \"password\": \"123\",\r\n    \"surname\": \"Treneric\",\r\n    \"gender\": \"Muski\",\r\n    \"biography\": \"Strucan rad vec 5 godina.\",\r\n    \"specializedFor\": \"Kardio/kondicija\",\r\n    \"birthDate\": \"1999-09-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/trainer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"trainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all clients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/client/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"client",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all trainers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/trainer/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"trainer",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get client by email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/client?email=123@mai.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"client"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "123@mai.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get trainer by email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/trainer?email=trener@mail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"trainer"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "trener@mail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete trainer by email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/trainer/trener@mail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"trainer",
+						"trener@mail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete client by email",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/client/123@mai.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"client",
+						"123@mai.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add machine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Triceps pulldown machine\",\r\n    \"description\": \"Efektivna masina za razvoj tricepsa.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-machines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-machines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add prop",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bucica 5kg\",\r\n    \"description\": \"Rekvizit za brojne vezbe gornjeg dela tela. Upotrebljiv i za misice donjeg dijela tijela kod pocetnika ili osoba sa manjkom misicne mase.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-prop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-prop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all machines",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-machines/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-machines",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all props",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-prop/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-prop",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete machine by Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-machines/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-machines",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete prop by Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise-prop/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise-prop",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add exercise",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Triceps pulldown\",\r\n    \"note\": \"Moguce je koristi masinu za triceps pulldown ili bucicu sa dovoljnom kilazom.\",\r\n    \"videoLink\": \"www.youtube.com/watch?v=SALxEARiMkw\",\r\n    \"trainerId\": 2,\r\n    \"props\": [2],\r\n    \"machines\": [3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/exercise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all exercises",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get exercise by Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete exercise",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/exercise/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exercise",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

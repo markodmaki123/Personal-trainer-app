@@ -1,13 +1,10 @@
 package com.personal.trainer.demo.contract;
 
-import com.personal.trainer.demo.model.ExerciseMachine;
-import com.personal.trainer.demo.model.ExerciseProp;
 import com.personal.trainer.demo.model.Trainer;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -18,8 +15,8 @@ public class ExerciseDTO {
     String name;
     String note;
     String videoLink;
-    Trainer trainer;
+    Long trainerId;
 
-    Set<ExercisePropDTO> props;
-    Set<ExerciseMachineDTO> machines;
+    Set<Long> props;
+    Set<Long> machines;
 }

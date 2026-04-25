@@ -35,13 +35,13 @@ public class ExerciseMachineController {
     }
 
     @PostMapping
-    public ResponseEntity<ExerciseMachine> addFacility(@RequestBody ExerciseMachineDTO machineDTO) {
+    public ResponseEntity<ExerciseMachine> addMachine(@RequestBody ExerciseMachineDTO machineDTO) {
         ExerciseMachine machine = equipmentService.addExerciseMachine(machineDTO);
         return ResponseEntity.ok(machine);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> removeFacility(@PathVariable Long id) {
+    public ResponseEntity<Void> removeMachine(@PathVariable Long id) {
         equipmentService.deleteExerciseMachine(id);
         return ResponseEntity.noContent().build();
     }

@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public interface AuthService {
 
-    Trainer RegisterTrainer(TrainerDTO trainer);
+    Trainer registerTrainer(TrainerDTO trainer);
 
-    Client RegisterClient(ClientDTO client);
+    Client registerClient(ClientDTO client);
 
     List<Trainer> getTrainers();
 

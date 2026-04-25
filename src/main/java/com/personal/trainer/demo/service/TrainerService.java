@@ -4,6 +4,7 @@ import com.personal.trainer.demo.contract.ExerciseDTO;
 import com.personal.trainer.demo.model.Exercise;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -11,9 +12,10 @@ public interface TrainerService {
 
     Exercise createExercise(ExerciseDTO exercise);
 
-    List<Exercise> getExercises();
+    List<ExerciseDTO> getExercises();
 
-    Exercise getExercise(Long id);
+    ExerciseDTO getExercise(Long id);
 
     void deleteExercise(Long id);
+
 }

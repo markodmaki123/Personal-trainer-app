@@ -28,7 +28,7 @@ public class ExerciseMachine {
     @Column(name = "description", nullable = false)
     String description;
 
-    @ManyToMany(mappedBy = "exercise_machine")
+    @ManyToMany(mappedBy = "machines")
     Set<Exercise> exercises = new HashSet<>();
 
     public void addExercise(Exercise eq) {

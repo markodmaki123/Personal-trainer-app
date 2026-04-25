@@ -38,7 +38,7 @@ public class AuthServiceImplementation implements AuthService {
     }
 
     @Override
-    public Trainer RegisterTrainer(TrainerDTO trainer) {
+    public Trainer registerTrainer(TrainerDTO trainer) {
         Trainer register = new Trainer();
         register.setName(trainer.getName());
         register.setEmail(trainer.getEmail());
@@ -56,7 +56,7 @@ public class AuthServiceImplementation implements AuthService {
     }
 
     @Override
-    public Client RegisterClient(ClientDTO client) {
+    public Client registerClient(ClientDTO client) {
         Client user = new Client();
         user.setEmail(client.getEmail());
         user.setPassword(client.getPassword());

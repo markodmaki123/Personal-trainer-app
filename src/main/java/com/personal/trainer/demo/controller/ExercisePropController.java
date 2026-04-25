@@ -34,13 +34,13 @@ public class ExercisePropController {
     }
 
     @PostMapping
-    public ResponseEntity<ExerciseProp> addFacility(@RequestBody ExercisePropDTO propDTO) {
+    public ResponseEntity<ExerciseProp> addProp(@RequestBody ExercisePropDTO propDTO) {
         ExerciseProp prop = equipmentService.addExerciseProp(propDTO);
         return ResponseEntity.ok(prop);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> removeFacility(@PathVariable Long id) {
+    public ResponseEntity<Void> removeProp(@PathVariable Long id) {
         equipmentService.deleteExerciseProp(id);
         return ResponseEntity.noContent().build();
     }
