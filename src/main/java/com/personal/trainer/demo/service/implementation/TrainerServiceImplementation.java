@@ -56,7 +56,7 @@ public class TrainerServiceImplementation implements TrainerService {
         dto.setName(exercise.getName());
         dto.setNote(exercise.getNote());
         dto.setVideoLink(exercise.getVideoLink());
-        Optional<Trainer> trainer = trainerRepository.findById(exercise.getTrainerId());
+        Optional<Trainer> trainer = trainerRepository.findByEmail(exercise.getTrainerEmail());
         trainer.ifPresent(dto::setTrainer);
 
         for (Long propId : exercise.getProps()) {
@@ -98,6 +98,15 @@ public class TrainerServiceImplementation implements TrainerService {
     }
 
     @Override
+    public List<ExerciseDTO> getExerciseByTrainer(String email) {
+        List<Exercise> exercises = exerciseRepository.findByTrainer_Email(email);
+
+        return exercises.stream()
+                .map(this::mapToDTO)
+                .toList();
+    }
+
+    @Override
     public void deleteExercise(Long id){
         Optional<Exercise> exercise = exerciseRepository.findById(id);
         Exercise ex = exercise.orElseThrow(() ->
@@ -127,7 +136,7 @@ public class TrainerServiceImplementation implements TrainerService {
         dto.setVideoLink(exercise.getVideoLink());
 
         if (exercise.getTrainer() != null) {
-            dto.setTrainerId(exercise.getTrainer().getId());
+            dto.setTrainerEmail(exercise.getTrainer().getEmail());
         }
 
         Set<Long> propIds = new HashSet<>();

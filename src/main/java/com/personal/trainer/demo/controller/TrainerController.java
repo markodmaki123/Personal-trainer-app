@@ -56,6 +56,13 @@ public class TrainerController {
         return ResponseEntity.ok(exercises);
     }
 
+    @GetMapping("/trainer/{email}")
+    public ResponseEntity<List<ExerciseDTO>> getExerciseByTrainer(@PathVariable String email) {
+        List<ExerciseDTO> exercises = trainerService.getExerciseByTrainer(email).stream()
+                .toList();
+        return ResponseEntity.ok(exercises);
+    }
+
     @GetMapping("/{id}")
     public ExerciseDTO getByExerciseId(@PathVariable Long id) {
         return trainerService.getExercise(id);

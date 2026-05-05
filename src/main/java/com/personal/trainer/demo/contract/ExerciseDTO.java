@@ -15,7 +15,7 @@ public class ExerciseDTO {
     String name;
     String note;
     String videoLink;
-    Long trainerId;
+    String trainerEmail;
 
     Set<Long> props;
     Set<Long> machines;

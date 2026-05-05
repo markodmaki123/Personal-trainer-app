@@ -1,6 +1,7 @@
 package com.personal.trainer.demo.service.implementation;
 
 import com.personal.trainer.demo.contract.ClientDTO;
+import com.personal.trainer.demo.contract.LoginDTO;
 import com.personal.trainer.demo.contract.TrainerDTO;
 import com.personal.trainer.demo.infrastructure.repository.ClientRepository;
 import com.personal.trainer.demo.infrastructure.repository.TrainerRepository;
@@ -108,6 +109,27 @@ public class AuthServiceImplementation implements AuthService {
     public void removeByClientEmail(String email) {
         Optional<Client> client = clientRepository.findByEmail(email);
         client.ifPresent(clientRepository::delete);
+    }
+
+    @Override
+    public LoginDTO login(String email, String password) {
+        LoginDTO login = new LoginDTO();
+        Optional<Client> client = clientRepository.findByEmail(email);
+        Optional<Trainer> trainer = trainerRepository.findByEmail(email);
+
+        String type= "";
+        if (trainer.isPresent()) {
+            type = "trainer";
+        } else if (client.isPresent()) {
+            type = "client";
+        }else {
+            throw new RuntimeException("Invalid credentials");
+        }
+
+        login.setType(type);
+        login.setPassword(null);
+        login.setEmail(email);
+        return login;
     }
 
     TrainerDTO mapToDTO(Trainer trainer) {

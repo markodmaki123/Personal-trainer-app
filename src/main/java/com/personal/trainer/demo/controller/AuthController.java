@@ -1,9 +1,6 @@
 package com.personal.trainer.demo.controller;
 
-import com.personal.trainer.demo.contract.ClientDTO;
-import com.personal.trainer.demo.contract.ExerciseMachineDTO;
-import com.personal.trainer.demo.contract.ExercisePropDTO;
-import com.personal.trainer.demo.contract.TrainerDTO;
+import com.personal.trainer.demo.contract.*;
 import com.personal.trainer.demo.model.Client;
 import com.personal.trainer.demo.model.ExerciseMachine;
 import com.personal.trainer.demo.model.ExerciseProp;
@@ -95,6 +92,12 @@ public class AuthController {
     @GetMapping("/client")
     public ClientDTO getByClientEmail(@RequestParam String email) {
         return authService.getByClientEmail(email);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginDTO> login(@RequestBody LoginDTO loginDTO) {
+        LoginDTO log = authService.login(loginDTO.getEmail(),loginDTO.getPassword());
+        return ResponseEntity.ok(log);
     }
 
 }

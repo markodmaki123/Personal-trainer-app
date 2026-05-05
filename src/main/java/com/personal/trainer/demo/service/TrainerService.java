@@ -16,6 +16,8 @@ public interface TrainerService {
 
     ExerciseDTO getExercise(Long id);
 
+    List<ExerciseDTO> getExerciseByTrainer(String email);
+
     void deleteExercise(Long id);
 
 }

@@ -4,12 +4,11 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ExercisePropDTO {
+public class LoginDTO {
 
-    Long id;
-    String name;
-    String description;
+    String email;
+    String password;
+    String type;
 }

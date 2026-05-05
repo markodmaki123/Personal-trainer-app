@@ -1,6 +1,7 @@
 package com.personal.trainer.demo.service;
 
 import com.personal.trainer.demo.contract.ClientDTO;
+import com.personal.trainer.demo.contract.LoginDTO;
 import com.personal.trainer.demo.contract.TrainerDTO;
 import com.personal.trainer.demo.model.Client;
 import com.personal.trainer.demo.model.Trainer;
@@ -26,4 +27,7 @@ public interface AuthService {
     void removeByTrainerEmail(String email);
 
     void removeByClientEmail(String email);
+
+    LoginDTO login(String email, String password);
+
 }
