@@ -1,0 +1,29 @@
+Funkcionalni zahtevi:
+-Admin
+	Registracija trenera
+	Upravljanje spravama
+	Pregled izvestaja
+	Pregled liste trenera
+-Trener
+	Login
+	Upravljanje zahtevima klijenta
+	Kreiranje vezbi
+	Kreiranje treninga
+	Poruke sa klijentom
+	Pregled ocena i komentara
+-Klijent
+	Registracija i login
+	Slanje zahteva treneru
+	Pregled treninga
+	Ocenjivanje trenera i treninga
+	Poruke sa trenerom
+
+Nefunkcionalni zahtevi:
+-Bezbednost	
+	Autentifikacija i autorizacija
+-Performanse
+	Brzi api
+-Responzivnost
+	-web ili mobile
+-Skalabilnost
+-Dostupnost
